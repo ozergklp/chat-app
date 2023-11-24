@@ -4,7 +4,9 @@ module.exports = {
   roots: ['<rootDir>/src'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$',
-  setupFilesAfterEnv: [],
+  setupFilesAfterEnv: [
+    '<rootDir>/jest.env.ts',
+  ],
   moduleNameMapper: {
     '\\.(css|less)$': 'identity-obj-proxy',
   }

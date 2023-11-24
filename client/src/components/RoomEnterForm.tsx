@@ -15,7 +15,7 @@ export default function RoomEnterForm() {
         e.preventDefault();
         dispatch(setIsJoined(true));
         if (socket) {
-        socket.emit('join-room', room,);
+            socket.emit('join-room', room,);
         }
     };
 
@@ -23,14 +23,17 @@ export default function RoomEnterForm() {
         <React.Fragment>
         {!isJoined && (
             <form className='flex flex-col mx-auto p-4 rounded-xl  bg-slate-100  '>
-                <label htmlFor='name' className=' my-2 text-lg text-slate-800'>Your Name:</label>
+                <label htmlFor='name' data-testid='name' className=' my-2 text-lg text-slate-800'>Your Name:</label>
                 <input
                 name='name'
                 id='name'
                 type='text'
                 value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder='Type your message...'
+                onChange={(e) => {
+                    console.log(e.target.value)
+                    dispatch(setName(e.target.value))
+                }}
+                placeholder='Type your name...'
                 className='border-2  p-1 pl-3 rounded-xl bg-slate-200 outline-slate-300 mb-3'
                 />
 
@@ -40,7 +43,7 @@ export default function RoomEnterForm() {
                 name='room'
                 type='text'
                 value={room}
-                onChange={(e) => setRoom(e.target.value)}
+                onChange={(e) => dispatch(setRoom(e.target.value))}
                 placeholder='Enter room...'
                 className='border-2  p-1 pl-3 rounded-xl bg-slate-200 outline-slate-300'
                 />

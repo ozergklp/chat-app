@@ -1,7 +1,7 @@
 // chatSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface ChatState {
+export interface ChatState {
     messages: string[];
     msg: string;
     room: string;
@@ -17,13 +17,14 @@ const initialState: ChatState = {
     isJoined: false,
 };
 
-const chatSlice = createSlice({
+export const chatSlice = createSlice({
     name: 'chat',
     initialState,
     reducers: {
-    setMessages: (state, action: PayloadAction<string[]>) => {
-        state.messages = action.payload;
-    },
+    setMessages: (state, action: PayloadAction<string>) => {
+            state.messages = [...state.messages, action.payload];
+        },
+    
     setMsg: (state, action: PayloadAction<string>) => {
         state.msg = action.payload;
     },

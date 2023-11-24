@@ -1,0 +1,1 @@
+global.setImmediate = global.setImmediate ||  ((fn: Function, ...args: any[]) => global.setTimeout(fn, 0, ...args));

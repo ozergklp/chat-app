@@ -18,6 +18,6 @@
   "checkJs": true,
   "types": ["jest","node","@types/jest","@testing-library/jest-dom"]
 },
-"include": ["src/**/*", "context/SocketContext.tsx"],
+"include": ["src/**/*", "context/SocketContext.tsx", "jest.env.ts"],
 "exclude": ["node_modules"]
 }
