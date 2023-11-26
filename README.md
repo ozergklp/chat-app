@@ -1,6 +1,6 @@
 #  Real-Time Chat App
 
-This is a simple, real-time chat application for connecting with friends. Join rooms, chat instantly, and enjoy responsive communication on any device.
+This is a real-time chat application for connecting with friends. Join rooms, chat instantly, and enjoy responsive communication on any device.
 
 ## Features
 
